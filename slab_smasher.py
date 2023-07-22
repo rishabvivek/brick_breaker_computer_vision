@@ -84,11 +84,16 @@ def game_loop():
                 curr_hand_pos = 0
     
         #hand position controlling paddle position
+        
         curr_hand_pos = (curr_hand_pos + prev_hand_pos) / 2
         hand_diff = curr_hand_pos - prev_hand_pos
         hand_diff *= -1
-        paddle_x += hand_diff * 2.025
+  
+        paddle_x += hand_diff * 1.5
         paddle_x = max(0, min(screen_width - paddle_width, paddle_x))
+       
+
+        prev_hand_pos = curr_hand_pos
        
 
 
